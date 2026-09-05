@@ -1,0 +1,38 @@
+/* Final responsive layer for small screens */
+html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+@media (max-width:760px){
+  body{min-width:0!important}
+  .hero{width:100vw!important;max-width:100vw!important;min-height:100svh!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;position:relative!important;padding:100px 18px 130px!important}
+  .hero>div:not(.orb){width:100%!important;max-width:420px!important;min-width:0!important;margin:0 auto!important;position:relative!important;z-index:5!important}
+  .hero .orb{width:280px!important;height:280px!important;max-width:72vw!important;max-height:72vw!important;left:50%!important;top:48%!important;transform:translate(-50%,-50%)!important}
+  .sigil.profile-avatar,.hero .sigil{width:96px!important;height:96px!important;min-width:96px!important;max-width:96px!important;margin:0 auto 22px!important;border-radius:50%!important;overflow:hidden!important}
+  .sigil.profile-avatar img,.hero .sigil img{width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important}
+  .hero h1{width:100%!important;max-width:100%!important;font-size:clamp(32px,10vw,46px)!important;letter-spacing:2px!important;line-height:1.08!important;overflow-wrap:normal!important;word-break:normal!important;margin:12px 0!important}
+  .hero h2{width:100%!important;font-size:9px!important;letter-spacing:3px!important;line-height:1.5!important;white-space:normal!important}
+  .hero .tag{width:100%!important;max-width:340px!important;font-size:14px!important;line-height:1.65!important;margin:18px auto!important}
+  .hero .btn{max-width:100%!important;font-size:9px!important;padding:12px 15px!important;white-space:normal!important;text-align:center!important}
+  .wrap{width:calc(100% - 32px)!important;max-width:100%!important}
+  section{width:100%!important;max-width:100%!important;padding:78px 0!important;overflow:hidden!important}
+  .profile{display:grid!important;grid-template-columns:1fr!important;width:100%!important;gap:30px!important}
+  .profile-photo-wrap{width:min(270px,90vw)!important;height:330px!important;margin:0 auto!important}
+  .profile-photo{width:240px!important;height:290px!important}
+  .profile-ring{width:260px!important;height:315px!important}
+  .grid,.works,.books{grid-template-columns:1fr!important;width:100%!important}
+  .work{height:260px!important}
+  .book-cover{width:min(270px,82vw)!important;margin:0 auto!important}
+  .nav{position:fixed!important;left:8px!important;right:8px!important;top:auto!important;bottom:8px!important;transform:none!important;width:calc(100% - 16px)!important;max-width:none!important;z-index:999999!important;box-sizing:border-box!important}
+  .navin{width:100%!important;max-width:none!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:4px!important}
+  .brand{width:34px!important;height:34px!important;min-width:34px!important;flex:0 0 34px!important;padding:6px!important;box-sizing:border-box!important}
+  .windows-logo{width:20px!important;height:20px!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:1fr 1fr!important;gap:2px!important;transform:none!important}
+  .windows-logo i{display:block!important;width:auto!important;height:auto!important;transform:none!important}
+  .links{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:0!important;min-width:0!important;flex:1 1 auto!important}
+  .links a{display:flex!important;align-items:center!important;justify-content:center!important;flex:1 1 0!important;min-width:0!important;width:auto!important;padding:8px 2px!important;gap:3px!important;font-size:8px!important;line-height:1!important;white-space:nowrap!important;overflow:visible!important;box-sizing:border-box!important}
+  .links a .win-icon{display:block!important;width:13px!important;height:13px!important;min-width:13px!important;flex:0 0 13px!important}
+}
+@media (max-width:370px){
+  .nav{left:5px!important;right:5px!important;width:calc(100% - 10px)!important;padding:5px!important}
+  .brand{width:30px!important;height:30px!important;min-width:30px!important;flex-basis:30px!important;padding:5px!important}
+  .windows-logo{width:18px!important;height:18px!important}
+  .links a{font-size:7px!important;padding:8px 1px!important;gap:2px!important}
+  .links a .win-icon{width:12px!important;height:12px!important;min-width:12px!important;flex-basis:12px!important}
+}
