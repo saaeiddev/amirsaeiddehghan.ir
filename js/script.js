@@ -25,3 +25,10 @@ taskLinks.forEach(link=>{
     link.classList.add('active');
   });
 });
+
+// Restore Amir's profile photo using the stable GitHub profile image.
+const stableProfilePhoto='https://avatars.githubusercontent.com/u/108151841?v=4';
+document.querySelectorAll('.profile-avatar img,.profile-photo').forEach(img=>{
+  img.src=stableProfilePhoto;
+  img.referrerPolicy='no-referrer';
+});
