@@ -1,3 +1,14 @@
+const projectsGrid=document.querySelector('#projects .expertise-grid');
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/car-diagnostic/"]')){
+  const carDiagnosticProject=document.createElement('a');
+  carDiagnosticProject.className='feature-card';
+  carDiagnosticProject.href='https://saaeiddev.github.io/car-diagnostic/';
+  carDiagnosticProject.target='_blank';
+  carDiagnosticProject.rel='noopener noreferrer';
+  carDiagnosticProject.innerHTML='<span class="feature-icon">🚗</span><h3>AutoScan 3D — Car Diagnostic Simulator</h3><p>Interactive 3D Car Diagnostic Experience ↗</p>';
+  projectsGrid.appendChild(carDiagnosticProject);
+}
+
 const revealTargets=document.querySelectorAll('.desktop-window,.feature-card,.work,.social-card');
 
 if('IntersectionObserver' in window){
