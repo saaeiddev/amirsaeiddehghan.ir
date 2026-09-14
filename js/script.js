@@ -106,7 +106,7 @@ if(desktopShortcuts && !desktopShortcuts.querySelector('a[href="#projects"]')){
     const icon=projectsShortcut.querySelector('.icon-3d');
     if(icon){
       icon.className='icon-3d win11-icon';
-      icon.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true"><defs><linearGradient id="projects-folder" x2="0" y2="1"><stop stop-color="#ffe792"/><stop offset="1" stop-color="#ffc33b"/></linearGradient></defs><path d="M5 16a4 4 0 0 1 4-4h16l6 6h24a4 4 0 0 1 4 4v30a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z" fill="url(#projects-folder)"/><circle cx="37" cy="37" r="14" fill="#1687ef"/><g fill="none" stroke="#fff" stroke-width="2"><ellipse cx="37" cy="37" rx="6" ry="14"/><path d="M23 37h28M26 30c7 4 15 4 22 0M26 44c7-4 15-4 22 0"/></g></svg>';
+      icon.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true"><defs><linearGradient id="projects-folder" x2="0" y2="1"><stop stop-color="#ffe792"/><stop offset="1" stop-color="#ffc33b"/></linearGradient></defs><path d="M5 16a4 4 0 0 1 4-4h16l6 6h24a4 4 0 0 1 4 4v30a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z" fill="url(#projects-folder)"/></svg>';
     }
     const label=projectsShortcut.querySelector(':scope > span:last-child');
     if(label) label.textContent='Websites & Projects';
