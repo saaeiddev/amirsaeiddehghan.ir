@@ -2,6 +2,10 @@
 html,body{width:100%;max-width:100%;overflow-x:hidden!important}
 img,svg{max-width:100%}
 
+/* Force the Websites & Projects desktop shortcut to show only the folder shape. */
+.desktop-shortcut[href="#projects"] .icon-3d svg > circle,
+.desktop-shortcut[href="#projects"] .icon-3d svg > g{display:none!important}
+
 @media(max-width:760px){
   body{min-width:0!important}
   .desktop-shell{width:calc(100% - 18px)!important;max-width:none!important;margin-inline:auto!important;padding-top:12px!important}
