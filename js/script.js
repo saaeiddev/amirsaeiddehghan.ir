@@ -54,3 +54,111 @@ document.querySelectorAll('.profile-avatar img,.profile-photo').forEach(img=>{
   img.src=stableProfilePhoto;
   img.referrerPolicy='no-referrer';
 });
+
+// Open each existing site section as a Windows-style window without changing its content or design.
+const appSections=Array.from(document.querySelectorAll('.app-section'));
+
+if(appSections.length){
+  const modalStyle=document.createElement('style');
+  modalStyle.textContent=`
+    body.window-modal-open{overflow:hidden}
+    .app-section.window-modal{
+      display:none;
+      position:fixed;
+      inset:34px 24px 78px;
+      z-index:9000;
+      padding:0;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .app-section.window-modal.is-window-open{
+      display:flex;
+      pointer-events:auto;
+    }
+    .app-section.window-modal>.content-window{
+      width:min(1100px,calc(100vw - 48px));
+      max-height:calc(100vh - 112px);
+      min-height:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+    }
+    .app-section.window-modal .window-titlebar{
+      flex:0 0 auto;
+    }
+    .app-section.window-modal .window-body{
+      flex:1 1 auto;
+      min-height:0;
+      overflow-y:auto;
+      overscroll-behavior:contain;
+      -webkit-overflow-scrolling:touch;
+    }
+    .app-section.window-modal .window-controls span:last-child{
+      cursor:pointer;
+    }
+    @media(max-width:760px){
+      .app-section.window-modal{
+        inset:8px 6px 66px;
+      }
+      .app-section.window-modal>.content-window{
+        width:calc(100vw - 16px);
+        max-height:calc(100vh - 82px);
+      }
+    }
+  `;
+  document.head.appendChild(modalStyle);
+
+  appSections.forEach(section=>section.classList.add('window-modal'));
+
+  const closeAllWindows=()=>{
+    appSections.forEach(section=>section.classList.remove('is-window-open'));
+    document.body.classList.remove('window-modal-open');
+  };
+
+  const openWindow=section=>{
+    closeAllWindows();
+    section.classList.add('is-window-open');
+    document.body.classList.add('window-modal-open');
+    const body=section.querySelector('.window-body');
+    if(body) body.scrollTop=0;
+    const windowEl=section.querySelector('.desktop-window');
+    if(windowEl) windowEl.classList.add('show');
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    const href=link.getAttribute('href');
+    if(!href || href==='#') return;
+    const target=document.querySelector(href);
+    if(!target || !target.classList.contains('app-section')) return;
+
+    link.addEventListener('click',event=>{
+      event.preventDefault();
+      openWindow(target);
+    });
+  });
+
+  appSections.forEach(section=>{
+    const closeButton=section.querySelector('.window-controls span:last-child');
+    if(!closeButton) return;
+
+    closeButton.setAttribute('role','button');
+    closeButton.setAttribute('aria-label','Close window');
+    closeButton.tabIndex=0;
+
+    const closeThisWindow=()=>{
+      section.classList.remove('is-window-open');
+      if(!appSections.some(item=>item.classList.contains('is-window-open'))){
+        document.body.classList.remove('window-modal-open');
+      }
+    };
+
+    closeButton.addEventListener('click',closeThisWindow);
+    closeButton.addEventListener('keydown',event=>{
+      if(event.key==='Enter' || event.key===' '){
+        event.preventDefault();
+        closeThisWindow();
+      }
+    });
+  });
+}
