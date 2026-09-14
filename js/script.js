@@ -55,6 +55,22 @@ document.querySelectorAll('.profile-avatar img,.profile-photo').forEach(img=>{
   img.referrerPolicy='no-referrer';
 });
 
+// Add requested contact details to the existing Contact window only.
+const contactBody=document.querySelector('#contact .contact-body');
+if(contactBody && !contactBody.querySelector('.contact-details-added')){
+  const contactDetails=document.createElement('div');
+  contactDetails.className='contact-details-added';
+  contactDetails.style.cssText='display:grid;gap:10px;justify-content:center;margin:24px auto 4px;max-width:520px;text-align:left';
+  contactDetails.innerHTML=`
+    <a class="win-button" href="tel:09016979635"><span>📱</span><span><strong>Personal Phone</strong><br>09016979635</span></a>
+    <a class="win-button" href="tel:02186054785"><span>☎️</span><span><strong>Office Phone</strong><br>02186054785</span></a>
+    <a class="win-button" href="https://wa.me/message/4JHSJN2GV6WVD1" target="_blank" rel="noopener noreferrer"><span>💬</span><span><strong>WhatsApp</strong></span></a>
+    <a class="win-button" href="https://t.me/amirsaeiddehghan" target="_blank" rel="noopener noreferrer"><span>✈️</span><span><strong>Telegram</strong><br>t.me/@amirsaeiddehghan</span></a>
+  `;
+  const mailButton=contactBody.querySelector('.mail-button');
+  contactBody.insertBefore(contactDetails,mailButton || null);
+}
+
 // Add launchers for the existing Courses & Certifications section only.
 const desktopShortcuts=document.querySelector('.desktop-shortcuts');
 if(desktopShortcuts && !desktopShortcuts.querySelector('a[href="#courses"]')){
