@@ -79,6 +79,28 @@ if(taskbarCenter && !taskbarCenter.querySelector('a[href="#courses"]')){
   }
 }
 
+// Add launchers for the existing Websites & Projects section only.
+if(desktopShortcuts && !desktopShortcuts.querySelector('a[href="#projects"]')){
+  const portfolioShortcut=desktopShortcuts.querySelector('a[href="#work"]');
+  if(portfolioShortcut){
+    const projectsShortcut=portfolioShortcut.cloneNode(true);
+    projectsShortcut.href='#projects';
+    const label=projectsShortcut.querySelector(':scope > span:last-child');
+    if(label) label.textContent='Websites & Projects';
+    desktopShortcuts.insertBefore(projectsShortcut,desktopShortcuts.querySelector('a[href="#books"]'));
+  }
+}
+
+if(taskbarCenter && !taskbarCenter.querySelector('a[href="#projects"]')){
+  const portfolioTask=taskbarCenter.querySelector('a[href="#work"]');
+  if(portfolioTask){
+    const projectsTask=portfolioTask.cloneNode(true);
+    projectsTask.href='#projects';
+    projectsTask.setAttribute('aria-label','Websites & Projects');
+    taskbarCenter.insertBefore(projectsTask,taskbarCenter.querySelector('a[href="#books"]'));
+  }
+}
+
 // Open each existing site section as a Windows-style window without changing its content or design.
 const appSections=Array.from(document.querySelectorAll('.app-section'));
 
