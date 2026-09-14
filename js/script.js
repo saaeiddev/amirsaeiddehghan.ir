@@ -9,6 +9,17 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(carDiagnosticProject);
 }
 
+const coursesGrid=document.querySelector('#courses .expertise-grid');
+if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
+  const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
+  if(templateCard){
+    const operatingSystemsCard=templateCard.cloneNode(true);
+    operatingSystemsCard.querySelector('h3').textContent='Operating Systems Basics';
+    operatingSystemsCard.querySelector('p').textContent='Cisco Networking Academy';
+    coursesGrid.appendChild(operatingSystemsCard);
+  }
+}
+
 const revealTargets=document.querySelectorAll('.desktop-window,.feature-card,.work,.social-card');
 
 if('IntersectionObserver' in window){
