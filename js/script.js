@@ -55,6 +55,30 @@ document.querySelectorAll('.profile-avatar img,.profile-photo').forEach(img=>{
   img.referrerPolicy='no-referrer';
 });
 
+// Add launchers for the existing Courses & Certifications section only.
+const desktopShortcuts=document.querySelector('.desktop-shortcuts');
+if(desktopShortcuts && !desktopShortcuts.querySelector('a[href="#courses"]')){
+  const booksShortcut=desktopShortcuts.querySelector('a[href="#books"]');
+  if(booksShortcut){
+    const coursesShortcut=booksShortcut.cloneNode(true);
+    coursesShortcut.href='#courses';
+    const label=coursesShortcut.querySelector(':scope > span:last-child');
+    if(label) label.textContent='Courses & Certifications';
+    desktopShortcuts.insertBefore(coursesShortcut,desktopShortcuts.querySelector('a[href="#contact"]'));
+  }
+}
+
+const taskbarCenter=document.querySelector('.taskbar-center');
+if(taskbarCenter && !taskbarCenter.querySelector('a[href="#courses"]')){
+  const expertiseTask=taskbarCenter.querySelector('a[href="#expertise"]');
+  if(expertiseTask){
+    const coursesTask=expertiseTask.cloneNode(true);
+    coursesTask.href='#courses';
+    coursesTask.setAttribute('aria-label','Courses & Certifications');
+    taskbarCenter.insertBefore(coursesTask,taskbarCenter.querySelector('a[href="#work"]'));
+  }
+}
+
 // Open each existing site section as a Windows-style window without changing its content or design.
 const appSections=Array.from(document.querySelectorAll('.app-section'));
 
