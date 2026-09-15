@@ -50,6 +50,16 @@ if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>ti
   }
 }
 
+if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='EF SET English Test')){
+  const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
+  if(templateCard){
+    const efSetCard=templateCard.cloneNode(true);
+    efSetCard.querySelector('h3').textContent='EF SET English Test';
+    efSetCard.querySelector('p').textContent='C2 Proficient';
+    coursesGrid.appendChild(efSetCard);
+  }
+}
+
 const revealTargets=document.querySelectorAll('.desktop-window,.feature-card,.work,.social-card');
 
 if('IntersectionObserver' in window){
