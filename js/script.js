@@ -29,6 +29,16 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(programmingLanguagesProject);
 }
 
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Theater/"]')){
+  const theaterProject=document.createElement('a');
+  theaterProject.className='feature-card';
+  theaterProject.href='https://saaeiddev.github.io/Theater/';
+  theaterProject.target='_blank';
+  theaterProject.rel='noopener noreferrer';
+  theaterProject.innerHTML='<span class="feature-icon">🎭</span><h3>Theater — Interactive 3D Stage</h3><p>Interactive 3D Theater Experience ↗</p>';
+  projectsGrid.appendChild(theaterProject);
+}
+
 const coursesGrid=document.querySelector('#courses .expertise-grid');
 if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
   const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
