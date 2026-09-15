@@ -19,6 +19,16 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(electricCarMotorProject);
 }
 
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Programming-Languages-/"]')){
+  const programmingLanguagesProject=document.createElement('a');
+  programmingLanguagesProject.className='feature-card';
+  programmingLanguagesProject.href='https://saaeiddev.github.io/Programming-Languages-/';
+  programmingLanguagesProject.target='_blank';
+  programmingLanguagesProject.rel='noopener noreferrer';
+  programmingLanguagesProject.innerHTML='<span class="feature-icon">☕</span><h3>Programming Languages Café</h3><p>Interactive 3D Programming Languages Experience ↗</p>';
+  projectsGrid.appendChild(programmingLanguagesProject);
+}
+
 const coursesGrid=document.querySelector('#courses .expertise-grid');
 if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
   const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
