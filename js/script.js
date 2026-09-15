@@ -9,6 +9,16 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(carDiagnosticProject);
 }
 
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Electric-Car-Motor-/"]')){
+  const electricCarMotorProject=document.createElement('a');
+  electricCarMotorProject.className='feature-card';
+  electricCarMotorProject.href='https://saaeiddev.github.io/Electric-Car-Motor-/';
+  electricCarMotorProject.target='_blank';
+  electricCarMotorProject.rel='noopener noreferrer';
+  electricCarMotorProject.innerHTML='<span class="feature-icon">⚡</span><h3>Electric Car Motor — 3D Interactive Explorer</h3><p>Interactive 3D EV Motor Experience ↗</p>';
+  projectsGrid.appendChild(electricCarMotorProject);
+}
+
 const coursesGrid=document.querySelector('#courses .expertise-grid');
 if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
   const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
