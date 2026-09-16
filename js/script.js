@@ -39,6 +39,16 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(theaterProject);
 }
 
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/How-AI-Works-/"]')){
+  const howAIWorksProject=document.createElement('a');
+  howAIWorksProject.className='feature-card';
+  howAIWorksProject.href='https://saaeiddev.github.io/How-AI-Works-/';
+  howAIWorksProject.target='_blank';
+  howAIWorksProject.rel='noopener noreferrer';
+  howAIWorksProject.innerHTML='<span class="feature-icon">🤖</span><h3>HOW AI WORKS — Interactive 3D AI Lab</h3><p>Interactive 3D AI Education Experience ↗</p>';
+  projectsGrid.appendChild(howAIWorksProject);
+}
+
 const coursesGrid=document.querySelector('#courses .expertise-grid');
 if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
   const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
