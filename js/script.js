@@ -49,6 +49,16 @@ if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github
   projectsGrid.appendChild(howAIWorksProject);
 }
 
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Saeid-Sports-/"]')){
+  const saeidSportsProject=document.createElement('a');
+  saeidSportsProject.className='feature-card';
+  saeidSportsProject.href='https://saaeiddev.github.io/Saeid-Sports-/';
+  saeidSportsProject.target='_blank';
+  saeidSportsProject.rel='noopener noreferrer';
+  saeidSportsProject.innerHTML='<span class="feature-icon">🏆</span><h3>SAEID SPORTS — Interactive 3D Sports Arena</h3><p>Interactive 3D Sports Experience ↗</p>';
+  projectsGrid.appendChild(saeidSportsProject);
+}
+
 const coursesGrid=document.querySelector('#courses .expertise-grid');
 if(coursesGrid && !Array.from(coursesGrid.querySelectorAll('h3')).some(title=>title.textContent.trim()==='Operating Systems Basics')){
   const templateCard=Array.from(coursesGrid.querySelectorAll('.feature-card')).find(card=>card.querySelector('h3')?.textContent.trim()==='Applied AI Foundations');
