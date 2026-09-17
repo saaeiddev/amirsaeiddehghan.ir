@@ -1,3 +1,14 @@
+const v8ProjectsGrid=document.querySelector('#projects .expertise-grid');
+if(v8ProjectsGrid && !v8ProjectsGrid.querySelector('a[href="https://saaeiddev.github.io/V8-Engine/"]')){
+  const v8EngineProject=document.createElement('a');
+  v8EngineProject.className='feature-card';
+  v8EngineProject.href='https://saaeiddev.github.io/V8-Engine/';
+  v8EngineProject.target='_blank';
+  v8EngineProject.rel='noopener noreferrer';
+  v8EngineProject.innerHTML='<span class="feature-icon">⚙️</span><h3>V8 Engine — Interactive 3D Mechanics Lab</h3><p>Interactive 3D V8 Engine Experience ↗</p>';
+  v8ProjectsGrid.appendChild(v8EngineProject);
+}
+
 const projectsGrid=document.querySelector('#projects .expertise-grid');
 if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/car-diagnostic/"]')){
   const carDiagnosticProject=document.createElement('a');
