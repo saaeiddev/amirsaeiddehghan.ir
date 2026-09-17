@@ -10,6 +10,16 @@ if(v8ProjectsGrid && !v8ProjectsGrid.querySelector('a[href="https://saaeiddev.gi
 }
 
 const projectsGrid=document.querySelector('#projects .expertise-grid');
+if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Saeid-Brain-/"]')){
+  const saeidBrainProject=document.createElement('a');
+  saeidBrainProject.className='feature-card';
+  saeidBrainProject.href='https://saaeiddev.github.io/Saeid-Brain-/';
+  saeidBrainProject.target='_blank';
+  saeidBrainProject.rel='noopener noreferrer';
+  saeidBrainProject.innerHTML='<span class="feature-icon">🧠</span><h3>Saeid Brain — Interactive 3D Neural Portfolio</h3><p>Interactive 3D Brain Experience ↗</p>';
+  projectsGrid.appendChild(saeidBrainProject);
+}
+
 if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/car-diagnostic/"]')){
   const carDiagnosticProject=document.createElement('a');
   carDiagnosticProject.className='feature-card';
