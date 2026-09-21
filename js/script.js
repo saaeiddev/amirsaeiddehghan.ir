@@ -10,6 +10,17 @@ if(v8ProjectsGrid && !v8ProjectsGrid.querySelector('a[href="https://saaeiddev.gi
 }
 
 const projectsGrid=document.querySelector('#projects .expertise-grid');
+const capcomProjectHref='https://saaeiddev.github.io/CapCom/';
+if(projectsGrid && !projectsGrid.querySelector('a[href="'+capcomProjectHref+'"]')){
+  const capcomProject=document.createElement('a');
+  capcomProject.className='feature-card';
+  capcomProject.href=capcomProjectHref;
+  capcomProject.target='_blank';
+  capcomProject.rel='noopener noreferrer';
+  capcomProject.innerHTML='<span class="feature-icon">🎮</span><h3>CAPCOM — Interactive Game Encyclopedia</h3><p>Interactive Capcom Games & Characters Archive ↗</p>';
+  projectsGrid.appendChild(capcomProject);
+}
+
 if(projectsGrid && !projectsGrid.querySelector('a[href="https://saaeiddev.github.io/Saeid-Brain-/"]')){
   const saeidBrainProject=document.createElement('a');
   saeidBrainProject.className='feature-card';
